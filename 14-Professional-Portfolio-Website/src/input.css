@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --color-primary: 0deg 0% 14%;
+    --color-secondary: 0deg 0% 18%;
+    --color-accent: 3deg 74% 65%;
+    --color-text: 0deg 0% 100%;
+  }
+
+  img {
+    @apply rounded h-full object-cover;
+  }
+
+  section {
+    @apply p-6 flex flex-col md:pl-16 md:pr-8 gap-y-10 text-text lg:gap-x-10 *:basis-full
+  }
+}
+
+@layer utilities {
+  .section-secondary {
+    @apply bg-secondary 2xl:rounded
+  }
+
+  .section-primary {
+    @apply bg-primary
+  }
+}
+
+@layer components {
+  .nav {
+    @apply flex flex-col gap-6 fixed rounded top-0 right-0 bg-accent/40 backdrop-blur-lg p-24 z-20 scale-y-0 origin-bottom transition-transform duration-300;
+  }
+
+  .nav.open {
+    @apply scale-y-100 origin-top;
+  }
+
+  .nav--link {
+    @apply py-2 text-lg relative transition-colors hover:text-secondary before:content-[''] before:absolute before:w-2/4 before:h-px hover:before:origin-left before:bg-secondary before:left-0 before:bottom-0 before:scale-x-0 hover:before:scale-x-100 before:origin-right before:transition-transform;
+  }
+
+  .hamburger {
+    @apply fixed
+    /* position: a little from the top and horizontally centered and above the rest */
+    top-[30px] right-2/4 translate-x-2/4 z-30
+    /* :before and :after MUST have a content, even if it is empty */
+    before:content-[''] after:content-['']
+    /* for the animation */
+    before:transition after:transition
+    /*** simple rest */
+    /* pseudo elements - before - long line of hamburger */
+    before:h-0.5 before:w-2/3 before:bg-text before:absolute before:top-4 before:left-2
+    /* pseudo elements - after - short line of hamburger */
+    after:h-0.5 after:w-1/3 after:bg-text after:absolute after:top-6 after:left-2
+    /* hamburger itself */
+    bg-accent py-5 w-12 h-8 rounded cursor-pointer;
+  }
+
+  .hamburger.close {
+    @apply
+    /* long line - :before rotate 45deg clockwise and move a little bit down */
+    before:rotate-45 before:translate-y-1
+    /* short line - :after rotate 45deg anticlockwise, extend the width and move a little bit up */
+    after:-rotate-45 after:w-2/3 after:-translate-y-1;
+  }
+
+  /* we have before and after elements in many places and they all share the following so we create two utility classes for them */
+  .before {
+    @apply before:absolute before:content-[''] before:rounded-full before:bg-accent
+  }
+
+  .after {
+    @apply after:absolute after:content-[''] after:rounded-full after:bg-accent
+  }
+
+  .left-vertically-centered {
+    /* used for the before and after elements to position it at the left side vertically centered (you have to provide some space at the element itself on the left side - other ways the pseudo element will overlap with the element itself) */
+    @apply top-2/4 -translate-y-2/4 left-0;
+  }
+
+  .gallery-image {
+    @apply
+    /* position the after element above (higher z) with the same size like the "base" element */
+    after:w-full after:h-full after:z-10 after:top-0 after:left-0
+    /* reset the rounded-full of the after class - no good practice but here we will be fine with it */
+    after:rounded
+    /* give it a background color with some opacity and a backdrop-blur to "unsharpen" the underlying image */
+    after:bg-accent/60 after:backdrop-blur-sm
+    /* the whole effect should only be visible on sm and bigger */
+    after:scale-x-0
+    /* give the after element a transition (so that the fade-in/fade-out while hover-in/hover-out is "animated") */
+    after:transition hover:after:scale-x-100
+    /* this way the "filter" comes from right to left and also leaves from right to left */
+    after:origin-left hover:after:origin-right
+  }
+
+
+  /* just for this project */
+  .section-subheading {
+    @apply text-sm pl-6 uppercase relative lg:text-lg before before:h-1 before:w-4 before:left-vertically-centered
+  }
+
+  .section-heading {
+    @apply text-2xl capitalize font-bold lg:text-3xl
+  }
+
+  .button {
+    @apply uppercase p-2 border-2 border-accent self-start text-sm rounded sm:text-base sm:px-4
+  }
+
+}

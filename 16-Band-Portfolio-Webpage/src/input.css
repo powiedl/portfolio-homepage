@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  img {
+    @apply object-cover;
+  }
+}
+
+@layer utilities {
+  .default-padding {
+    @apply p-4 sm:p-8 md:p-12 lg:p-16
+  }
+}
+
+@layer components {
+  .section-heading {
+    /* zwei blur Effekte (mittels before und after) und transition für before und scale des Elements selbst */
+    @apply self-center px-1 text-center text-2xl uppercase font-black sm:text-4xl sm:font-medium after before relative after:w-full after:h-3 after:bg-golden/70 after:bottom-0.5 after:left-0 after:-z-[2] z-10 after:blur-md before:-left-1 before:w-full before:h-2 before:bottom-1 before:-z-[1] before:blur-sm before:bg-golden/90 hover:before:left-1 before:transition-all before:duration-300 hover:scale-105 transition-transform duration-700;
+  }
+
+  .before {
+    @apply before:absolute before:content-[''];
+  }
+
+  .after {
+    @apply after:absolute after:content-[''];
+  }
+
+  .label-effect {
+    /* ein blur Effekt (mittels after) mit starker opacity am background womit der Effekt "schwach" wird */
+    @apply relative after after:bottom-0.5 after:left-0 after:h-2 after:w-3/4 after:bg-golden/60 after:blur-sm after:-z-[1] z-10;
+  }
+
+  .nav.open {
+    @apply scale-y-100 origin-top;
+  }
+
+  .hamburger.close {
+    div:first-child {
+      @apply rotate-45 translate-y-2;
+    }
+
+    div:nth-child(2) {
+      @apply opacity-0;
+    }
+
+    div:last-child {
+      @apply -rotate-45 -translate-y-2;
+    }
+  }
+}

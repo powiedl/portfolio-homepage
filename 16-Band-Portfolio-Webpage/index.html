@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<!-- 
+my additions: 
+ - extended the effect of the section heading (a second shadow and some hover effects)
+ - moved the image of the band members a little bit "off" (so that the golden background doesn't fit the top of the images)
+ - added some hover effect at the buy a ticket button (A different kind of music) 
+ - reengineered the upcoming tour table to grid to have a better control over the width of each column (instead of flex) 
+ - tweaked the styling of the email address input in the subscribe form (rounded, thicker border on focus without "jumping" of the input itself)
+ -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg" href="images/music.svg" />
+
+    <link rel="stylesheet" href="./output/output.css" />
+    <title>TuneForge</title>
+  </head>
+  <body
+    class="2xl:max-w-screen-2xl 2xl:mx-auto 2xl:bg-blue selection:bg-blue selection:text-golden text-white"
+  >
+    <!-- --------------------- Header -->
+    <header
+      id="home"
+      class="default-padding h-screen grid gap-y-6 sm:grid-rows-[min-content_1fr]"
+      style="
+        background-image: linear-gradient(
+            to top,
+            rgba(10 33 78 /0.9),
+            rgba(10 73 78 / 0.4) 90%
+          ),
+          url('images/showcase.jpg');
+        background-position: center;
+      "
+    >
+      <nav class="flex justify-between">
+        <a
+          class="text-golden self-start relative after after:h-[2px] after:w-1/4 after:bg-blue after:bottom-2.5 after:left-1/2 after:-translate-x-2/4 after:-rotate-45 after:rounded"
+          href="#"
+          >TuneForge</a
+        >
+
+        <ul
+          class="nav fixed top-0 left-0 h-screen w-screen bg-golden flex flex-col gap-5 justify-center items-center scale-y-0 transition-transform duration-300 ease-in-out origin-bottom sm:static sm:scale-y-100 sm:flex-row sm:h-auto sm:w-auto sm:bg-transparent z-50"
+        >
+          <li
+            class="relative after after:transition after:h-2 after:w-3 after:bg-blue after:rounded after:bottom-1/4 after:-right-6 after:animate-spin after:opacity-0 sm:after:bg-golden sm:after:right-0 sm:after:-bottom-2 hover:after:opacity-100 hover:before:opacity-100 before before:bg-blue before:transition before:w-3 before:h-2 before:animate-spinRev before:bottom-1/2 before:-right-6 sm:before:bg-golden sm:before:left-0 sm:before:-bottom-2 before:opacity-0"
+          >
+            <a
+              class="text-lg transition-colors hover:text-blue text-white sm:hover:text-golden lg:text-2xl"
+              href="#home"
+              >Home</a
+            >
+          </li>
+          <li
+            class="relative after after:transition after:h-2 after:w-3 after:bg-blue after:rounded after:bottom-1/4 after:-right-6 after:animate-spin after:opacity-0 sm:after:bg-golden sm:after:right-0 sm:after:-bottom-2 hover:after:opacity-100 hover:before:opacity-100 before before:bg-blue before:transition before:w-3 before:h-2 before:animate-spinRev before:bottom-1/2 before:-right-6 sm:before:bg-golden sm:before:left-0 sm:before:-bottom-2 before:opacity-0"
+          >
+            <a
+              class="text-lg transition-colors hover:text-blue text-white sm:hover:text-golden lg:text-2xl"
+              href="#about"
+              >About</a
+            >
+          </li>
+          <li
+            class="relative after after:transition after:h-2 after:w-3 after:bg-blue after:rounded after:bottom-1/4 after:-right-6 after:animate-spin after:opacity-0 sm:after:bg-golden sm:after:right-0 sm:after:-bottom-2 hover:after:opacity-100 hover:before:opacity-100 before before:bg-blue before:transition before:w-3 before:h-2 before:animate-spinRev before:bottom-1/2 before:-right-6 sm:before:bg-golden sm:before:left-0 sm:before:-bottom-2 before:opacity-0"
+          >
+            <a
+              class="text-lg transition-colors hover:text-blue text-white sm:hover:text-golden lg:text-2xl"
+              href="#discography"
+              >Discography</a
+            >
+          </li>
+          <li
+            class="relative after after:transition after:h-2 after:w-3 after:bg-blue after:rounded after:bottom-1/4 after:-right-6 after:animate-spin after:opacity-0 sm:after:bg-golden sm:after:right-0 sm:after:-bottom-2 hover:after:opacity-100 hover:before:opacity-100 before before:bg-blue before:transition before:w-3 before:h-2 before:animate-spinRev before:bottom-1/2 before:-right-6 sm:before:bg-golden sm:before:left-0 sm:before:-bottom-2 before:opacity-0"
+          >
+            <a
+              class="text-lg transition-colors hover:text-blue text-white sm:hover:text-golden lg:text-2xl"
+              href="#band"
+              >Band</a
+            >
+          </li>
+          <li
+            class="relative after after:transition after:h-2 after:w-3 after:bg-blue after:rounded after:bottom-1/4 after:-right-6 after:animate-spin after:opacity-0 sm:after:bg-golden sm:after:right-0 sm:after:-bottom-2 hover:after:opacity-100 hover:before:opacity-100 before before:bg-blue before:transition before:w-3 before:h-2 before:animate-spinRev before:bottom-1/2 before:-right-6 sm:before:bg-golden sm:before:left-0 sm:before:-bottom-2 before:opacity-0"
+          >
+            <a
+              class="text-lg transition-colors hover:text-blue text-white sm:hover:text-golden lg:text-2xl"
+              href="#tours"
+              >Tours</a
+            >
+          </li>
+          <li
+            class="relative after after:transition after:h-2 after:w-3 after:bg-blue after:rounded after:bottom-1/4 after:-right-6 after:animate-spin after:opacity-0 sm:after:bg-golden sm:after:right-0 sm:after:-bottom-2 hover:after:opacity-100 hover:before:opacity-100 before before:bg-blue before:transition before:w-3 before:h-2 before:animate-spinRev before:bottom-1/2 before:-right-6 sm:before:bg-golden sm:before:left-0 sm:before:-bottom-2 before:opacity-0"
+          >
+            <a
+              class="text-lg transition-colors hover:text-blue text-white sm:hover:text-golden lg:text-2xl"
+              href="#gallery"
+              >Gallery</a
+            >
+          </li>
+          <li
+            class="relative after after:transition after:h-2 after:w-3 after:bg-blue after:rounded after:bottom-1/4 after:-right-6 after:animate-spin after:opacity-0 sm:after:bg-golden sm:after:right-0 sm:after:-bottom-2 hover:after:opacity-100 hover:before:opacity-100 before before:bg-blue before:transition before:w-3 before:h-2 before:animate-spinRev before:bottom-1/2 before:-right-6 sm:before:bg-golden sm:before:left-0 sm:before:-bottom-2 before:opacity-0"
+          >
+            <a
+              class="text-lg transition-colors hover:text-blue text-white sm:hover:text-golden lg:text-2xl"
+              href="#news"
+              >News</a
+            >
+          </li>
+          <li
+            class="relative after after:transition after:h-2 after:w-3 after:bg-blue after:rounded after:bottom-1/4 after:-right-6 after:animate-spin after:opacity-0 sm:after:bg-golden sm:after:right-0 sm:after:-bottom-2 hover:after:opacity-100 hover:before:opacity-100 before before:bg-blue before:transition before:w-3 before:h-2 before:animate-spinRev before:bottom-1/2 before:-right-6 sm:before:bg-golden sm:before:left-0 sm:before:-bottom-2 before:opacity-0"
+          >
+            <a
+              class="text-lg transition-colors hover:text-blue text-white sm:hover:text-golden lg:text-2xl"
+              href="#contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <div
+          class="hamburger w-8 fixed top-5 right-4 flex flex-col gap-y-1.5 justify-center items-center cursor-pointer z-50 sm:hidden"
+        >
+          <div
+            class="h-[2px] w-full bg-white rounded transition-transform"
+          ></div>
+          <div class="h-[2px] w-full bg-white rounded transition-opacity"></div>
+          <div
+            class="h-[2px] w-full bg-white rounded transition-transform"
+          ></div>
+        </div>
+      </nav>
+
+      <section
+        class="space-y-5 sm:place-self-center text-center md:relative md:before md:before:-top-28 md:before:left-1/2 md:before:-translate-x-2/4 md:before:bg-blue/50 md:before:size-96 md:before:rounded-full md:before:border-8 md:before:border-golden/50 md:before:blur-sm"
+      >
+        <!-- <section class="space-y-5 sm:place-self-center text-center md:relative md:before md:before:-top-28 md:before:left-2/4 md:before:-translate-x-2/4 md:before:bg-blue/50 md:before:size-96 md:before:rounded-full md:before:border-8 md:before:border-golden/50 md:before:blur-sm"> -->
+        <h1 id="about" class="text-5xl md:text-7xl">Welcome to TuneForge</h1>
+
+        <p
+          class="text-lg font-semibold md:text2xl md:font-medium *:text-golden"
+        >
+          The official hub of <span>TuneForge</span> where the beats are
+          <span>fresh</span>, the vibe is <span>electric</span>, and the
+          <span>music</span> never stops.
+        </p>
+      </section>
+    </header>
+
+    <main>
+      <!-- --------------------- Latest Album -->
+      <section class="default-padding bg-blue flex flex-col gap-y-10">
+        <div class="flex flex-col items-center gap-y-5">
+          <h2 class="section-heading">Latest Album</h2>
+
+          <div class="flex flex-col gap-y-4 justify-center">
+            <div>
+              <p class="text-center text-xl">
+                <span class="uppercase pr-6 label-effect">Label</span>
+                <span class="border-b-2 border-dotted">Reload</span>
+              </p>
+              <p class="text-center text-xl">
+                <span class="uppercase pr-6 label-effect">Released</span>
+                <span class="border-b-2 border-dotted">August 2027</span>
+              </p>
+              <p class="text-center text-xl">
+                <span class="uppercase pr-6 label-effect">Genre</span>
+                <span class="border-b-2 border-dotted">Rock/Metal</span>
+              </p>
+              <p class="text-center text-xl">
+                <span class="uppercase pr-6 label-effect">Styles</span>
+                <span class="border-b-2 border-dotted">Revival</span>
+              </p>
+            </div>
+
+            <ul
+              class="flex gap-x-2 *:bg-slate/60 *:border *:border-white/60 *:cursor-pointer *:p-2 *:size-6 *:flex *:justify-center *:items-center *:text-xs *:transition-colors hover:*:bg-golden/60"
+            >
+              <li>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-google-play"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-amazon"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-cloud"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-spotify"></i></a>
+              </li>
+
+              <li>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border border-golden grid grid-cols-[1fr]">
+          <figure>
+            <img class="w-full" src="images/album.jpg" alt="" />
+          </figure>
+
+          <div
+            class="divide-y divide-golden *:p-4 md:*:px-6 *:flex *:justify-between *:gap-x-2 *:items-center"
+          >
+            <div>
+              <div
+                class="grid grid-cols-[min-content_1fr] grid-rows-2 gap-x-2 md:gap-x-4"
+              >
+                <i
+                  class="fa-solid fa-play text-[8px] col-start-1 col-end-2 row-start-1 row-end-3 pt-1.5 md:text-base md:pt-2"
+                ></i>
+                <h6 class="text-golden md:text-xl">Love Alive</h6>
+                <h6 class="text-sm text-golden md:text-lg">Reload</h6>
+              </div>
+
+              <div>
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-download"></i>
+                  Download</a
+                >
+              </div>
+            </div>
+
+            <div>
+              <div
+                class="grid grid-cols-[min-content_1fr] grid-rows-2 gap-x-2 md:gap-x-4"
+              >
+                <i
+                  class="fa-solid md:text-white fa-play text-[8px] col-start-1 col-end-2 row-start-1 row-end-3 pt-1.5 md:text-base md:pt-2"
+                ></i>
+                <h6 class="text-golden md:text-xl">Hope</h6>
+                <h6 class="text-sm text-golden md:text-lg">Reload</h6>
+              </div>
+
+              <div class="flex gap-x-2 md:gap-x-4">
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-music"></i> Lyrics</a
+                >
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-cart-shopping"></i>
+                  Purchase</a
+                >
+              </div>
+            </div>
+
+            <div>
+              <div
+                class="grid grid-cols-[min-content_1fr] grid-rows-2 gap-x-2 md:gap-x-4"
+              >
+                <i
+                  class="fa-solid md:text-white fa-play text-[8px] col-start-1 col-end-2 row-start-1 row-end-3 pt-1.5 md:text-base md:pt-2"
+                ></i>
+                <h6 class="text-golden md:text-xl">Bounce Out</h6>
+                <h6 class="text-sm text-golden md:text-lg">Reload</h6>
+              </div>
+
+              <div>
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-download"></i>
+                  Download</a
+                >
+              </div>
+            </div>
+
+            <div>
+              <div
+                class="grid grid-cols-[min-content_1fr] grid-rows-2 gap-x-2 md:gap-x-4"
+              >
+                <i
+                  class="fa-solid md:text-white fa-play text-[8px] col-start-1 col-end-2 row-start-1 row-end-3 pt-1.5 md:text-base md:pt-2"
+                ></i>
+                <h6 class="text-golden md:text-xl">Headspace</h6>
+                <h6 class="text-sm text-golden md:text-lg">Reload</h6>
+              </div>
+
+              <div>
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-download"></i>
+                  Download</a
+                >
+              </div>
+            </div>
+
+            <div>
+              <div
+                class="grid grid-cols-[min-content_1fr] grid-rows-2 gap-x-2 md:gap-x-4"
+              >
+                <i
+                  class="fa-solid md:text-white fa-play text-[8px] col-start-1 col-end-2 row-start-1 row-end-3 pt-1.5 md:text-base md:pt-2"
+                ></i>
+                <h6 class="text-golden md:text-xl">Tomorrow</h6>
+                <h6 class="text-sm text-golden md:text-lg">Reload</h6>
+              </div>
+
+              <div class="flex gap-x-2 md:gap-x-4">
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-music"></i> Lyrics</a
+                >
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-cart-shopping"></i>
+                  Purchase</a
+                >
+              </div>
+            </div>
+
+            <div>
+              <div
+                class="grid grid-cols-[min-content_1fr] grid-rows-2 gap-x-2 md:gap-x-4"
+              >
+                <i
+                  class="fa-solid fa-play text-[8px] col-start-1 col-end-2 row-start-1 row-end-3 pt-1.5 md:text-base md:pt-2"
+                ></i>
+                <h6 class="text-golden md:text-xl">Falling Apart</h6>
+                <h6 class="text-sm text-golden md:text-lg">Reload</h6>
+              </div>
+
+              <div class="flex gap-x-2 md:gap-x-4">
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-download"></i>
+                  Download</a
+                >
+                <a
+                  class="px-3 py-1 bg-golden text-xs md:text-base md:px-6 text-blue flex items-center gap-x-2 md:gap-x-4 md:border-2 md:border-white"
+                  href="#"
+                  ><i class="fa-solid md:text-white fa-cart-shopping"></i>
+                  Purchase</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------- Unique Music -->
+      <section
+        class="default-padding bg-blue flex flex-col gap-y-10"
+        style="
+          background: linear-gradient(
+              to top,
+              rgba(10 33 78 / 0.9),
+              rgba(10 33 78 / 0.4) 90%
+            ),
+            url('images/upcoming-tour.jpg');
+          background-position: center;
+          background-size: cover;
+        "
+      >
+        <div class="flex flex-col items-center gap-y-5">
+          <h2 class="section-heading">A different kind of music</h2>
+
+          <p
+            class="text-center text-lg lg:text-2xl md:w-3/4 md:mx-auto lg:w-1/2"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            tempora nobis aliquam voluptates iusto assumenda excepturi itaque,
+            commodi autem, blanditiis debitis repellendus quas placeat soluta
+            atque cumque maxime vitae nihil.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 *:p-4">
+          <div class="bg-golden border-2 border-blue text-blue text-center">
+            <h6 class="text-lg font-bold mb-3">Where</h6>
+            <p>890 Fifth Avenue, Manhattan</p>
+            <p>New York City</p>
+          </div>
+
+          <div class="bg-blue border-2 border-golden text-golden text-center">
+            <h6 class="text-lg font-bold mb-3">When</h6>
+            <p>Friday to Sunday</p>
+            <p>Aug 18 to 20, 2027</p>
+          </div>
+
+          <button
+            class="sm:col-span-2 md:col-span-1 border-2 md:self-center border-white bg-blue hover:scale-105 hover:bg-golden/50 transition-all"
+          >
+            <i class="fa-solid fa-ticket"></i> Buy a Ticket
+          </button>
+        </div>
+      </section>
+
+      <!-- --------------------- Discography -->
+      <section
+        id="discography"
+        class="default-padding bg-blue flex flex-col gap-y-10"
+      >
+        <h2 class="section-heading">Discography</h2>
+
+        <div class="grid gap-6 sm:gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col gap-y-5">
+            <div>
+              <h6 class="uppercase text-golden font-bold text-xl">Reload</h6>
+              <a class="space-x-1 group" href="#"
+                ><span>View Album</span>
+                <i
+                  class="text-xs text-golden group-hover:translate-x-1 transition-transform fa-solid fa-chevron-right"
+                ></i
+              ></a>
+            </div>
+
+            <figure><img src="images/discography-1.jpg" alt="" /></figure>
+
+            <ul
+              class="flex gap-x-2 *:bg-slate/60 *:border *:border-white/60 *:cursor-pointer *:p-2 *:size-6 *:flex *:justify-center *:items-center *:text-xs *:transition-colors hover:*:text-golden"
+            >
+              <li>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-google-play"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-amazon"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-cloud"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-spotify"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col gap-y-5">
+            <div>
+              <h6 class="uppercase text-golden font-bold text-xl">
+                Set me free
+              </h6>
+              <a class="space-x-1 group" href="#"
+                ><span>View Album</span>
+                <i
+                  class="text-xs text-golden group-hover:translate-x-1 transition-transform fa-solid fa-chevron-right"
+                ></i
+              ></a>
+            </div>
+
+            <figure><img src="images/discography-2.jpg" alt="" /></figure>
+
+            <ul
+              class="flex gap-x-2 *:bg-slate/60 *:border *:border-white/60 *:cursor-pointer *:p-2 *:size-6 *:flex *:justify-center *:items-center *:text-xs *:transition-colors hover:*:text-golden"
+            >
+              <li>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-google-play"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-amazon"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-cloud"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-spotify"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col gap-y-5">
+            <div>
+              <h6 class="uppercase text-golden font-bold text-xl">Limitless</h6>
+              <a class="space-x-1 group" href="#"
+                ><span>View Album</span>
+                <i
+                  class="text-xs text-golden group-hover:translate-x-1 transition-transform fa-solid fa-chevron-right"
+                ></i
+              ></a>
+            </div>
+
+            <figure><img src="images/discography-3.jpg" alt="" /></figure>
+
+            <ul
+              class="flex gap-x-2 *:bg-slate/60 *:border *:border-white/60 *:cursor-pointer *:p-2 *:size-6 *:flex *:justify-center *:items-center *:text-xs *:transition-colors hover:*:text-golden"
+            >
+              <li>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-google-play"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-amazon"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-cloud"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-spotify"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col gap-y-5">
+            <div>
+              <h6 class="uppercase text-golden font-bold text-xl">Dawn</h6>
+              <a class="space-x-1 group" href="#"
+                ><span>View Album</span>
+                <i
+                  class="text-xs text-golden group-hover:translate-x-1 transition-transform fa-solid fa-chevron-right"
+                ></i
+              ></a>
+            </div>
+
+            <figure><img src="images/discography-4.jpg" alt="" /></figure>
+
+            <ul
+              class="flex gap-x-2 *:bg-slate/60 *:border *:border-white/60 *:cursor-pointer *:p-2 *:size-6 *:flex *:justify-center *:items-center *:text-xs *:transition-colors hover:*:text-golden"
+            >
+              <li>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-google-play"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-amazon"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-cloud"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-spotify"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------- Countdown -->
+      <section
+        class="default-padding bg-blue flex flex-col gap-y-10"
+        style="
+          background: linear-gradient(
+              to top,
+              rgba(10 33 78 / 0.9),
+              rgba(10 33 78 / 0.4) 90%
+            ),
+            url('images/countdown.jpg');
+          background-position: center;
+          background-size: cover;
+        "
+      >
+        <h2 class="section-heading">Upcoming Tour</h2>
+
+        <p class="text-center text-lg lg:text-2xl">
+          Friday to Sunday Aug 18 to 20, 2027
+        </p>
+      </section>
+
+      <!-- --------------------- Band Members -->
+      <section id="band" class="default-padding bg-blue flex flex-col gap-y-10">
+        <h2 class="section-heading">Band Members</h2>
+
+        <div
+          class="grid gap-6 md:gap-8 md:grid-cols-3 *:space-y-5 *:bg-golden/85 *:pl-4 *:pb-4"
+        >
+          <div class="relative">
+            <figure>
+              <img
+                class="w-full relative -top-3"
+                src="images/members-1.jpg"
+                alt=""
+              />
+            </figure>
+
+            <div>
+              <h6 class="uppercase text-slate font-bold text-xl">Joe Jade</h6>
+              <p class="text-lg">Lead Vocalist</p>
+            </div>
+          </div>
+
+          <div class="relative">
+            <figure>
+              <img
+                class="w-full relative -top-3"
+                src="images/members-2.jpg"
+                alt=""
+              />
+            </figure>
+
+            <div>
+              <h6 class="uppercase text-slate font-bold text-xl">John Smith</h6>
+              <p class="text-lg">Lead Guitarist</p>
+            </div>
+          </div>
+
+          <div class="relative">
+            <figure>
+              <img
+                class="w-full relative -top-3"
+                src="images/members-3.jpg"
+                alt=""
+              />
+            </figure>
+
+            <div>
+              <h6 class="uppercase text-slate font-bold text-xl">
+                Jeremy James
+              </h6>
+              <p class="text-lg">Lead Drummer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------- Upcoming Tours -->
+      <section
+        id="tours"
+        class="default-padding bg-blue flex flex-col gap-y-10"
+      >
+        <h2 class="section-heading">Upcoming Tours</h2>
+
+        <figure class="space-x-4 max-w-screen-2xl">
+          <img class="w-full" src="images/tours-list.jpg" alt="" />
+          <figcaption class="text-lg text-center mt-2 md:mt-4">
+            The American Tour
+          </figcaption>
+        </figure>
+
+        <div class="space-y-6 w-full max-w-screen-lg mx-auto">
+          <!-- Tours -->
+          <div
+            class="border-golden border divide-y divide-golden *:p-4 sm:*:px-6 *:grid *:grid-cols-[15%_1fr_max-content]"
+          >
+            <div class="">
+              <p class="font-bold md:text-xl">21 Dec</p>
+
+              <div>
+                <h6
+                  class="text-start text-xs text-golden md:text-base lg:text-xl"
+                >
+                  Melbourne, AU
+                </h6>
+                <h6
+                  class="text-start text-xs text-golden md:text-base lg:text-xl"
+                >
+                  Rod Laver Arena
+                </h6>
+              </div>
+
+              <div
+                class="flex flex-col gap-2 sm:flex-row-reverse sm:items-center"
+              >
+                <a
+                  class="px-3 py-1 border-2 border-golden text-xs md:px-6 md:text-base lg:text-xl flex items-center gap-x-2 md:gap-x-4 md:border-white"
+                  href="#"
+                >
+                  <i
+                    class="text-xs md:text-lg lg:text-xl fa-solid fa-ticket"
+                  ></i>
+                  VIP</a
+                >
+
+                <a
+                  class="text-blue bg-golden px-3 py-1 border-2 border-golden text-xs md:px-6 md:text-base lg:text-xl flex items-center gap-x-2 md:gap-x-4 md:border-white"
+                  href="#"
+                >
+                  <i
+                    class="text-xs md:text-lg lg:text-xl fa-solid fa-ticket"
+                  ></i>
+                  Buy Ticket</a
+                >
+              </div>
+            </div>
+
+            <div class="">
+              <p class="font-bold md:text-xl">10 Jan</p>
+
+              <div>
+                <h6
+                  class="text-start text-xs text-golden md:text-base lg:text-xl"
+                >
+                  Washington, DC, USA
+                </h6>
+                <h6
+                  class="text-start text-xs text-golden md:text-base lg:text-xl"
+                >
+                  Capital One Arena
+                </h6>
+              </div>
+
+              <div
+                class="flex flex-col gap-2 sm:flex-row-reverse sm:items-center"
+              >
+                <a
+                  class="px-3 py-1 border-2 border-golden text-xs md:px-6 md:text-base lg:text-xl flex items-center gap-x-2 md:gap-x-4 md:border-white"
+                  href="#"
+                >
+                  <i
+                    class="text-xs md:text-lg lg:text-xl fa-solid fa-ticket"
+                  ></i>
+                  VIP</a
+                >
+
+                <a
+                  class="text-blue bg-golden px-3 py-1 border-2 border-golden text-xs md:px-6 md:text-base lg:text-xl flex items-center gap-x-2 md:gap-x-4 md:border-white"
+                  href="#"
+                >
+                  <i
+                    class="text-xs md:text-lg lg:text-xl fa-solid fa-ticket"
+                  ></i>
+                  Buy Ticket</a
+                >
+              </div>
+            </div>
+
+            <div class="">
+              <p class="font-bold md:text-xl">24 May</p>
+
+              <div>
+                <h6
+                  class="text-start text-xs text-golden md:text-base lg:text-xl"
+                >
+                  Houston, TX, USA
+                </h6>
+                <h6
+                  class="text-start text-xs text-golden md:text-base lg:text-xl"
+                >
+                  Arena Theatre
+                </h6>
+              </div>
+
+              <div
+                class="flex flex-col gap-2 sm:flex-row-reverse sm:items-center"
+              >
+                <a
+                  class="px-3 py-1 border-2 border-golden text-xs md:px-6 md:text-base lg:text-xl flex items-center gap-x-2 md:gap-x-4 md:border-white"
+                  href="#"
+                >
+                  <i
+                    class="text-xs md:text-lg lg:text-xl fa-solid fa-ticket"
+                  ></i>
+                  VIP</a
+                >
+
+                <a
+                  class="text-blue bg-golden px-3 py-1 border-2 border-golden text-xs md:px-6 md:text-base lg:text-xl flex items-center gap-x-2 md:gap-x-4 md:border-white"
+                  href="#"
+                >
+                  <i
+                    class="text-xs md:text-lg lg:text-xl fa-solid fa-ticket"
+                  ></i>
+                  Buy Ticket</a
+                >
+              </div>
+            </div>
+
+            <div class="">
+              <p class="font-bold md:text-xl">28 Oct</p>
+
+              <div>
+                <h6
+                  class="text-start text-xs text-golden md:text-base lg:text-xl"
+                >
+                  Chicago, IL, USA
+                </h6>
+                <h6
+                  class="text-start text-xs text-golden md:text-base lg:text-xl"
+                >
+                  United Center
+                </h6>
+              </div>
+
+              <div
+                class="flex flex-col gap-2 sm:flex-row-reverse sm:items-center"
+              >
+                <a
+                  class="px-3 py-1 border-2 border-golden text-xs md:px-6 md:text-base lg:text-xl flex items-center gap-x-2 md:gap-x-4 md:border-white"
+                  href="#"
+                >
+                  <i
+                    class="text-xs md:text-lg lg:text-xl fa-solid fa-ticket"
+                  ></i>
+                  VIP</a
+                >
+
+                <a
+                  class="text-blue bg-golden px-3 py-1 border-2 border-golden text-xs md:px-6 md:text-base lg:text-xl flex items-center gap-x-2 md:gap-x-4 md:border-white"
+                  href="#"
+                >
+                  <i
+                    class="text-xs md:text-lg lg:text-xl fa-solid fa-ticket"
+                  ></i>
+                  Buy Ticket</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div
+            id="news"
+            class="flex flex-col gap-y-5 border-golden border p-4 lg:w-1/2 mx-auto"
+          >
+            <h3
+              class="text-center text-lg uppercase sm:font-semibold sm:text-2xl"
+            >
+              Subscribe for free downloads <br />
+              and band news updates
+            </h3>
+            <form
+              class="flex flex-col md:w-1/2 md:mx-auto md:flex-row md:justify-between gap-y-1.5 md:gap-4 md:items-center lg:w-3/4"
+            >
+              <input
+                class="max-w-80 w-full border-golden border outline-none placeholder:text-white/60 bg-blue p-0.5 mx-auto box-content focus:bg-golden/20 focus:p-[1px] focus:border-2 focus:rounded-sm md:mr-0"
+                type="email"
+                placeholder="Email Address"
+              />
+              <input
+                class="bg-golden text-blue max-w-32 mx-auto cursor-pointer border-2 border-white py-1 px-4 sm:max-md:py-2 sm:px-6 md:text-lg"
+                type="submit"
+                value="Subscribe"
+              />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------- Pre-sale -->
+      <section
+        class="default-padding bg-blue flex flex-col gap-y-10"
+        style="
+          background: linear-gradient(
+              to top,
+              rgba(10 33 78 / 0.9),
+              rgba(10 33 78 / 0.4) 90%
+            ),
+            url('images/pre-sale.jpg');
+          background-position: center;
+          background-size: cover;
+        "
+      >
+        <h2 class="section-heading">pre-sale - upcoming tour</h2>
+
+        <div class="space-y-2">
+          <p class="text-center text-xl">
+            <span class="uppercase pr-6 label-effect">Pre-Sale Tour 1 :</span>
+            <span class="border-b-2 border-dotted">07/2 - 09/2</span>
+          </p>
+
+          <p class="text-center text-xl">
+            <span class="uppercase pr-6 label-effect">Pre-Sale Tour 2 :</span>
+            <span class="border-b-2 border-dotted">14/2 - 16/2</span>
+          </p>
+
+          <p class="text-center">
+            All pre-sales begin 12am local and end 6pm local time.
+          </p>
+        </div>
+
+        <a
+          class="max-w-56 uppercase border-2 border-golden px-8 py-2 text-lg text-center md:w-1/3 lg:w-1/4 mx-auto"
+          href="#"
+          >Check for more info</a
+        >
+      </section>
+
+      <!-- --------------------- Gallery -->
+      <section
+        id="gallery"
+        class="default-padding bg-blue flex flex-col gap-y-10"
+      >
+        <h2 class="section-heading">Band Gallery</h2>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <figure
+            class="sm:col-start-1 sm:col-end-3 sm:row-start-1 sm:row-end-3"
+          >
+            <img class="size-full" src="images/gallery-1.jpg" alt="" />
+          </figure>
+
+          <figure>
+            <img class="size-full" src="images/gallery-2.jpg" alt="" />
+          </figure>
+
+          <figure
+            class="sm:col-start-3 sm:-col-end-1 sm:row-start-1 sm:row-end-3"
+          >
+            <img class="size-full" src="images/gallery-3.jpg" alt="" />
+          </figure>
+
+          <figure
+            class="sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-5"
+          >
+            <img class="size-full" src="images/gallery-4.jpg" alt="" />
+          </figure>
+
+          <figure
+            class="sm:col-start-3 sm:-col-end-1 sm:row-start-5 sm:row-end-7"
+          >
+            <img class="size-full" src="images/gallery-5.jpg" alt="" />
+          </figure>
+
+          <figure
+            class="sm:col-start-2 sm:-col-end-1 sm:row-start-3 sm:row-end-5"
+          >
+            <img class="size-full" src="images/gallery-6.jpg" alt="" />
+          </figure>
+
+          <figure
+            class="sm:col-start-1 sm:-col-end-1 sm:row-start-7 sm:row-end-7"
+          >
+            <img class="size-full" src="images/gallery-7.jpg" alt="" />
+          </figure>
+
+          <figure>
+            <img class="size-full" src="images/gallery-8.jpg" alt="" />
+          </figure>
+
+          <figure
+            class="sm:col-start-2 sm:-col-end-3 sm:row-start-5 sm:row-end-7"
+          >
+            <img class="size-full" src="images/gallery-9.jpg" alt="" />
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <!-- --------------------- Footer -->
+    <footer
+      id="contact"
+      class="default-padding bg-blue flex flex-col gap-y-10"
+      style="
+        background: linear-gradient(
+            to top,
+            rgba(10 33 78 / 0.9),
+            rgba(10 33 78 / 0.4) 90%
+          ),
+          url('images/footer.jpg');
+        background-position: center;
+        background-size: cover;
+      "
+    >
+      <h2 class="section-heading">Stay in Touch</h2>
+
+      <div class="flex flex-col gap-4 md:flex-row md:justify-items-stretch">
+        <div
+          class="w-full border border-golden backdrop-blur-sm *:text-center space-y-4 p-8"
+        >
+          <h3 class="font-semibold text-lg sm:text-xl lg:text-2xl">Booking</h3>
+          <h5 class="uppercase sm:text-lg lg:text-xl">Jane Doe</h5>
+          <p
+            class="lowercase underline decoration-golden decoration-2 sm:text-lg lg:text-xl"
+          >
+            booking@tuneforge.com
+          </p>
+        </div>
+
+        <div
+          class="w-full border border-golden backdrop-blur-sm *:text-center space-y-4 p-8"
+        >
+          <h3 class="font-semibold text-lg sm:text-xl lg:text-2xl">Press</h3>
+          <h5 class="uppercase sm:text-lg lg:text-xl">Jack Doe</h5>
+          <p
+            class="lowercase underline decoration-golden decoration-2 sm:text-lg lg:text-xl"
+          >
+            press@tuneforge.com
+          </p>
+        </div>
+
+        <div
+          class="w-full border border-golden backdrop-blur-sm *:text-center space-y-4 p-8"
+        >
+          <h3 class="font-semibold text-lg sm:text-xl lg:text-2xl">Info</h3>
+          <h5 class="uppercase sm:text-lg lg:text-xl">Julianna Doe</h5>
+          <p
+            class="lowercase underline decoration-golden decoration-2 sm:text-lg lg:text-xl"
+          >
+            info@tuneforge.com
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Professional Portfolio</title>
+  </head>
+  <body class="2xl:max-w-screen-2xl 2xl:mx-auto 2xl:bg-primary">
+    <header
+      id="home"
+      class="p-6 bg-primary text-text relative md:p-16 flex flex-col gap-y-5 lg:gap-y-20"
+    >
+      <nav class="p-2 flex justify-between items-center">
+        <a class="text-accent" href="#">JD</a>
+        <ul
+          class="nav sm:flex-row sm:scale-y-100 sm:backdrop-blur-0 sm:static sm:p-2 sm:bg-transparent"
+        >
+          <li class="m-2">
+            <a
+              class="nav--link sm:hover:text-accent sm:before:bg-accent"
+              href="#home"
+              >Home</a
+            >
+          </li>
+          <li class="m-2">
+            <a
+              class="nav--link sm:hover:text-accent sm:before:bg-accent"
+              href="#about"
+              >about</a
+            >
+          </li>
+          <li class="m-2">
+            <a
+              class="nav--link sm:hover:text-accent sm:before:bg-accent"
+              href="#services"
+              >Services</a
+            >
+          </li>
+          <li class="m-2">
+            <a
+              class="nav--link sm:hover:text-accent sm:before:bg-accent"
+              href="#contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger sm:hidden"></div>
+        <a
+          class="uppercase border-2 border-accent p-2 text-base rounded sm:text-lg sm:px-4 lg:text-2xl lg:border-4 lg:py-3"
+          href="#home"
+          >Book Now</a
+        >
+      </nav>
+      <section
+        class="flex flex-col gap-10 lg:flex-row lg:*:basis-full lg:gap-x-24 xl:gap-x-12"
+      >
+        <!-- by xl:self-center (and flex-col) both children are centered vertically - along the cross axis -->
+        <div
+          class="flex flex-col gap-y-5 lg:gap-y-12 xl:self-center xl:gap-y-24"
+        >
+          <div class="space-y-2 lg:space-y-4">
+            <h6 class="section-subheading">Professional Photographer</h6>
+            <h1 class="text-5xl font-bold lg:text-7xl">John Doe</h1>
+          </div>
+          <div
+            class="flex flex-col gap-y-5 lg:gay-y-8 xl:pl-16 xl:relative xl:before xl:before:h-full xl:before:w-5 xl:before:top-0 xl:before:left-0"
+          >
+            <ul
+              class="flex gap-x-5 *:transition-colors *:cursor-pointer *:lg:text-2xl"
+            >
+              <li class="hover:text-accent">
+                <i class="fa-brands fa-facebook"></i>
+              </li>
+              <li class="hover:text-accent">
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+              <li class="hover:text-accent">
+                <i class="fa-brands fa-dribbble"></i>
+              </li>
+              <li class="hover:text-accent">
+                <i class="fa-brands fa-youtube"></i>
+              </li>
+            </ul>
+            <p class="lg:text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+              excepturi laborum. Quisquam impedit labore, sint explicabo vero ex
+              eligendi libero et assumenda velit, corporis, facilis iusto?
+              Doloremque rerum alias odio.
+            </p>
+            <a class="button" href="#">View Portfolio</a>
+          </div>
+        </div>
+        <figure
+          class="lg:max-w-[550px] lg:relative lg:before:content-[''] lg:before:h-96 lg:before:w-96 lg:before:absolute lg:before:-top-12 lg:before:-left-12 lg:before:-z-10 lg:z-10 lg:before:rounded lg:before:border-[20px] lg:before:border-accent"
+        >
+          <img class="" src="images/showcase.jpg" alt="" />
+        </figure>
+      </section>
+    </header>
+    <main>
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   Motto  -->
+      <section class="p-6 bg-secondary text-text md:p-16 2xl:rounded">
+        <div
+          class="p-2 flex flex-col gap-y-5 lg:w-3/4 lg:mx-auto lg:relative lg:after lg:after:h-2 lg:after:w-16 lg:after:-bottom-6 lg:after:left-2/4 lg:after:-translate-x-1/2"
+        >
+          <blockquote
+            cite="https://www.azquotes.com/author/8044-Martin_Luther_King_Jr/tag/brother"
+          >
+            <p
+              class="before:content-['\201C'] before:text-3xl lg:before:text-4xl after:content-['\201D'] text-xl text-center lg:text-2xl"
+            >
+              We've learned to fly the air like birds, we've learned to swim the
+              sea like fish, and yet we haven't learned to walk the earth as
+              brothers and sisters.
+            </p>
+          </blockquote>
+          <p class="text-center font-bold">
+            -- Martin Luther King, Jr., <cite>Love</cite>
+          </p>
+        </div>
+      </section>
+
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   About me  -->
+      <section id="about" class="section-primary lg:flex-row">
+        <div class="space-y-5 xl:self-center">
+          <div
+            class="space-y-8 *:space-y-2 lg:relative lg:after lg:after:w-3/4 lg:after:bottom-0 lg:after:h-5 lg:pb-12"
+          >
+            <div>
+              <h6 class="section-subheading">About me</h6>
+              <h2 class="section-heading">Professional Photographer</h2>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                neque nostrum enim, sit nam natus consequuntur sint veritatis,
+                ratione eaque quis architecto, in aut aliquid! Non, rerum?
+                Maxime, aliquid quos?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                iste animi facilis nemo dolor porro fugiat, deleniti error iusto
+                veritatis eius nesciunt nostrum, nihil commodi inventore quam
+                ipsam necessitatibus! Corporis.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg text-accent font-semibold lg:text-xl">
+              My Awards
+            </h3>
+            <ul class="space-y-1">
+              <li class="space-x-2">
+                <i class="fa-solid fa-angles-right text-accent"></i>
+                <span>Award 1</span>
+              </li>
+              <li class="space-x-2">
+                <i class="fa-solid fa-angles-right text-accent"></i>
+                <span>Award 2</span>
+              </li>
+              <li class="space-x-2">
+                <i class="fa-solid fa-angles-right text-accent"></i>
+                <span>Award 3</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <figure class="lg:max-w-[550px]">
+          <img src="images/about.jpg" alt="" />
+        </figure>
+      </section>
+
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   Gallery  -->
+      <section
+        class="p-6 bg-secondary grid md:p-16 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-4 lg:grid-rows-2 2xl:rounded"
+      >
+        <figure
+          class="md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-2 relative after gallery-image group"
+        >
+          <img src="images/gallery-1.jpg" alt="" />
+          <figcaption
+            class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-text transition z-[11] scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right lg:text-lg lg:font-semibold xl:text-xl xl:font-bold"
+          >
+            Gallery Image
+          </figcaption>
+        </figure>
+        <figure class="relative after gallery-image group">
+          <img src="images/gallery-2.jpg" alt="" />
+          <figcaption
+            class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-text transition z-[11] scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right lg:text-lg lg:font-semibold xl:text-xl xl:font-bold"
+          >
+            Gallery Image
+          </figcaption>
+        </figure>
+        <figure class="relative after gallery-image group">
+          <img src="images/gallery-3.jpg" alt="" />
+          <figcaption
+            class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-text transition z-[11] scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right lg:text-lg lg:font-semibold xl:text-xl xl:font-bold"
+          >
+            Gallery Image
+          </figcaption>
+        </figure>
+        <figure class="relative after gallery-image group">
+          <img src="images/gallery-4.jpg" alt="" />
+          <figcaption
+            class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-text transition z-[11] scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right lg:text-lg lg:font-semibold xl:text-xl xl:font-bold"
+          >
+            Gallery Image
+          </figcaption>
+        </figure>
+        <figure class="relative after gallery-image group">
+          <img src="images/gallery-5.jpg" alt="" />
+          <figcaption
+            class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-text transition z-[11] scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right lg:text-lg lg:font-semibold xl:text-xl xl:font-bold"
+          >
+            Gallery Image
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   Skills  -->
+      <section class="section-primary lg:flex-row-reverse">
+        <div class="space-y-5 lg:self-center xl:space-y-10">
+          <div class="space-y-2">
+            <h6 class="section-subheading">My Skills</h6>
+            <h2 class="section-heading">
+              I am experienced in the following fields
+            </h2>
+          </div>
+          <div class="space-y-2">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis debitis tempore, recusandae exercitationem atque ex
+              enim voluptate fuga quia nam natus, sapiente soluta laboriosam
+              dignissimos consectetur consequatur illum est sint!
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid,
+              quo reprehenderit quae nulla explicabo impedit voluptas
+              repudiandae repellendus at maxime, recusandae suscipit incidunt
+              pariatur, illum nisi omnis ab porro illo!
+            </p>
+          </div>
+          <div class="space-y-5 xl:space-y-8 *:space-y-2">
+            <div>
+              <h5 class="font-bold text-accent">Photography</h5>
+              <div
+                class="h-6 w-full rounded-full bg-secondary relative before before:top-0 before:left-0 before:h-6 before:w-[95%] before:rounded-full z-10 before:-z-10 pl-4"
+              >
+                95%
+              </div>
+            </div>
+            <div>
+              <h5 class="font-bold text-accent">Design Thinking</h5>
+              <div
+                class="h-6 w-full rounded-full bg-secondary relative before before:top-0 before:left-0 before:h-6 before:w-[90%] before:rounded-full z-10 before:-z-10 pl-4"
+              >
+                90%
+              </div>
+            </div>
+            <div>
+              <h5 class="font-bold text-accent">Videography</h5>
+              <div
+                class="h-6 w-full rounded-full bg-secondary relative before before:top-0 before:left-0 before:h-6 before:w-[80%] before:rounded-full z-10 before:-z-10 pl-4"
+              >
+                80%
+              </div>
+            </div>
+            <div>
+              <h5 class="font-bold text-accent">Social Innovation</h5>
+              <div
+                class="h-6 w-full rounded-full bg-secondary relative before before:top-0 before:left-0 before:h-6 before:w-[85%] before:rounded-full z-10 before:-z-10 pl-4"
+              >
+                85%
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure
+          class="lg:max-w-[550px] xl:relative xl:before xl:before:top-0 xl:before:left-0 xl:before:w-4 xl:before:h-full xl:pl-16"
+        >
+          <img src="images/skills.jpg" alt="" />
+        </figure>
+      </section>
+
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   Portfolio  -->
+      <section class="section-secondary lg:flex-row-reverse">
+        <div class="space-y-5 lg:self-center xl:space-y-10 *:space-y-2">
+          <div>
+            <h6 class="section-subheading">My Portfolio</h6>
+            <h2 class="section-heading">Recent Works</h2>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+              ipsam nemo! Ducimus similique illo in, ipsum illum est, natus
+              adipisci ullam odit accusantium beatae, facere fugit aliquid
+              nesciunt soluta? Nesciunt.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Mollitia, consectetur. Ratione repudiandae sit atque temporibus,
+              iure incidunt officia commodi ex explicabo quisquam nam minima
+              rerum dignissimos quaerat aut id modi?
+            </p>
+          </div>
+        </div>
+        <div class="grid gap-y-5 md:grid-cols-12 md:grid-rows-12 md:gap-0">
+          <figure
+            class="md:col-start-1 md:col-end-9 md:row-start-1 md:row-end-11 md:transition-all md:hover:scale-110 md:grayscale md:hover:grayscale-0"
+          >
+            <img src="images/portfolio-1.jpg" alt="" />
+          </figure>
+          <figure
+            class="md:col-start-7 md:col-end-13 md:row-start-3 md:row-end-11 lg:col-start-6 lg:-row-end-1 md:transition-all md:hover:scale-110"
+          >
+            <img src="images/portfolio-2.jpg" alt="" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   Services  -->
+      <section id="services" class="section-primary lg:flex-row-reverse">
+        <div class="space-y-5 lg:self-center xl:space-y-10 *:space-y-2">
+          <div>
+            <h6 class="section-subheading">why choose me</h6>
+            <h2 class="section-heading">Best Services for you</h2>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              officiis reprehenderit est similique dolorem, laborum eligendi
+              amet ex nihil iusto voluptates animi repellat eum illo earum
+              voluptatibus, voluptate eos totam.
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              asperiores labore obcaecati nam, numquam itaque eum sed ipsa
+              officia minima in eos ipsum sit, delectus distinctio corrupti
+              quod? Temporibus, labore.
+            </p>
+          </div>
+          <a class="button inline-block" href="#">Learn more</a>
+        </div>
+        <!-- <div
+          class="grid gap-5 *:flex *:flex-col *:gap-y-5 *:items-center *:border-2 *:border-accent *:rounded *:p-8 sm:grid-cols-2"
+        > -->
+        <div
+          class="grid gap-5 *:border-2 *:border-accent *:rounded *:p-6 sm:grid-cols-2 sm:grid-rows-[min-content]"
+        >
+          <div
+            class="grid grid-flow-row sm:grid-rows-subgrid sm:row-span-3 justify-items-center items-start min-h-56"
+          >
+            <figure class="h-24">
+              <img src="images/service-1.png" alt="" />
+            </figure>
+            <h5 class="text-xl text-accent text-center self-center">Wedding</h5>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore
+              laudantium.
+            </p>
+          </div>
+          <div
+            class="grid grid-flow-row sm:grid-rows-subgrid sm:row-span-3 justify-items-center items-start min-h-56"
+          >
+            <figure class="h-24">
+              <img src="images/service-2.png" alt="" />
+            </figure>
+            <h5 class="text-xl text-accent text-center self-center">
+              Company Profile
+            </h5>
+            <p class="text-center pt-1">
+              Lorem ipsum dolor sit amet con sectetur.
+            </p>
+          </div>
+          <div
+            class="grid grid-flow-row grid-rows-[minmax(80px,35%)_25%_40%] justify-items-center items-start min-h-56"
+          >
+            <figure class="h-16">
+              <img src="images/service-3.png" alt="" />
+            </figure>
+            <h5 class="text-xl text-accent text-center self-center">
+              Model Photoshoot
+            </h5>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </p>
+          </div>
+          <div
+            class="grid grid-flow-row grid-rows-[minmax(80px,35%)_25%_40%] justify-items-center items-start min-h-56"
+          >
+            <figure class="h-16">
+              <img src="images/service-4.png" alt="" />
+            </figure>
+            <h5 class="text-xl text-accent text-center self-center">
+              Videography
+            </h5>
+            <p class="text-center">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   Testimonials  -->
+      <section class="section-secondary lg:flex-row">
+        <div
+          class="flex flex-col gap-y-5 *:space-y-2 xl:gap-y-10 lg:self-center"
+        >
+          <div>
+            <h6 class="section-subheading">testimonials</h6>
+            <h2 class="section-heading">what my clients say</h2>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci,
+            reiciendis culpa. Laudantium, minus sed tenetur deserunt!
+          </p>
+          <a class="button inline-block" href="#">View Testimonials</a>
+        </div>
+        <div class="flex flex-col gap-y-5">
+          <figure class="h-8 self-end">
+            <img src="images/testimonial-quote.png" alt="" />
+          </figure>
+          <div
+            class="grid grid-cols-[max-content_1fr] grid-rows-[repeat(3,min-content)] gap-x-4 gap-y-1 mt-4 group"
+          >
+            <p
+              class="peer p-8 col-start-1 -col-end-1 row-start-1 row-end-2 text-primary border-2 border-transparent rounded relative z-10 after after:bg-accent after:h-full after:w-full after:top-0 after:left-0 after:rounded after:-z-[1] after:scale-y-100 hover:after:scale-y-0 hover:text-white hover:border-accent after:transition-transform"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+              accusamus voluptatum sint culpa alias perferendis delectus magnam,
+              doloremque repudiandae neque perspiciatis voluptatem incidunt
+              asperiores recusandae ut quaerat quos blanditiis excepturi.
+            </p>
+
+            <figure class="row-span-2 mt-7 peer-hover:animate-bounce">
+              <img
+                class="testimonial-person size-28 rounded-full object-top p-2 border-4 border-accent"
+                src="images/client.jpg"
+                alt=""
+              />
+            </figure>
+            <h6 class="self-end text-accent mt-7">Jane Doe</h6>
+            <p class="self-start">CEO at XYZ</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   News  -->
+      <section class="section-primary lg:flex-row-reverse">
+        <div
+          class="flex flex-col gap-y-5 *:space-y-2 xl:gap-y-10 lg:self-center"
+        >
+          <div>
+            <h6 class="section-subheading">news</h6>
+            <h2 class="section-heading">across the world of photography</h2>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+            quibusdam illo deleniti, ab laboriosam voluptatibus! Dolores
+            reprehenderit aspernatur exercitationem dolorum beatae repellendus
+            sunt quisquam dicta, similique sequi? Non, beatae officia?
+          </p>
+          <a class="button inline-block" href="#">View news</a>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 sm:grid-rows-[min-content]">
+          <div
+            class="grid sm:grid-rows-subgrid row-span-5 border-t-2 border-accent rounded bg-secondary shadow-lg shadow-primary p-5 gap-y-4"
+          >
+            <figure>
+              <img src="images/news-1.jpg" alt="" />
+            </figure>
+            <h3 class="font-bold text-xl">Model Photoshoot</h3>
+            <h6 class="text-accent">Dec 24, 2027</h6>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate quisquam suscipit iure eius qui sint aliquam, minima.
+            </p>
+            <a
+              class="button px-6 py-2 justify-self-start flex items-center group text-xs md:text-sm"
+              href="#"
+              ><span>Read More</span>
+              <i
+                class="fa-solid fa-angles-right text-accent ml-2 group-hover:translate-x-2 transition-transform"
+              ></i
+            ></a>
+          </div>
+          <div
+            class="grid sm:grid-rows-subgrid row-span-5 border-t-2 border-accent rounded bg-secondary shadow-lg shadow-primary p-5 gap-y-4"
+          >
+            <figure>
+              <img class="object-[65%]" src="images/news-2.jpg" alt="" />
+            </figure>
+            <h3 class="font-bold text-xl">Company Profile</h3>
+            <h6 class="text-accent">Jan 21, 2028</h6>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+              mollitia tenetur alias necessitatibus incidunt.
+            </p>
+            <a
+              class="button px-6 py-2 justify-self-start flex items-center group text-xs md:text-sm"
+              href="#"
+              ><span>Read More</span>
+              <i
+                class="fa-solid fa-angles-right text-accent ml-2 group-hover:translate-x-2 transition-transform"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   Contact  -->
+      <section id="contact" class="section-secondary lg:flex-row">
+        <div
+          class="flex flex-col gap-y-5 *:space-y-2 xl:gap-y-10 lg:self-center"
+        >
+          <div>
+            <h6 class="section-subheading">let's talk</h6>
+            <h2 class="section-heading">keep in touch</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae,
+              ea! Ea repellat soluta odio nemo quas rem beatae quisquam nobis,
+              praesentium perferendis corrupti omnis saepe iusto dolorum,
+              possimus exercitationem! Debitis.
+            </p>
+            <a class="button inline-block" href="#">let&apos;s chat</a>
+          </div>
+        </div>
+        <figure class="lg:max-w-[550px]">
+          <img src="images/contact.jpg" alt="" />
+        </figure>
+      </section>
+    </main>
+
+    <!-- *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*   Contact  -->
+    <footer
+      class="p-6 flex flex-col gap-y-10 bg-primary text-text md:p-16 lg:gap-x-10 lg:flex-row *:basis-full"
+    >
+      <div class="flex flex-col gap-y-5">
+        <figure>
+          <img src="images/form.jpg" alt="" />
+        </figure>
+        <form
+          class="flex flex-col gap-y-2 *:px-4 *:py-2 *:rounded *:outline-none h-full"
+        >
+          <input
+            class="bg-accent text-text placeholder:text-text/70 h-12 sm:h-16"
+            type="text"
+            name="name"
+            placeholder="Name"
+            id=""
+          />
+          <input
+            class="bg-accent text-text placeholder:text-text/70 h-12 sm:h-16"
+            type="email"
+            name="email"
+            placeholder="Email"
+            id=""
+          />
+          <textarea
+            class="bg-accent text-text placeholder:text-text/70 h-48 lg:h-full"
+            name="message"
+            id=""
+            placeholder="Message"
+          ></textarea>
+          <button
+            class="border-accent border-2 text-text cursor-pointer h-12 sm:h-16"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="flex flex-col gap-y-5 *:space-y-2 xl:gap-y-10 lg:self-center">
+        <div>
+          <h6 class="section-subheading">let&apos;s talk</h6>
+          <h2 class="section-heading">Keep in touch</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolore
+          perspiciatis expedita magnam fuga non libero ullam officiis rem
+          accusantium, unde aperiam aliquam iure, et alias placeat sunt
+          veritatis animi?
+        </p>
+        <div
+          class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
+        >
+          <div class="grid grid-cols-[112px_1fr] grid-cols-2 gap-x-5 gap-y-2">
+            <figure class="row-span-2">
+              <img class="w-28" src="images/contact-icon-1.png" alt="" />
+            </figure>
+            <h6 class="self-end text-accent">Phone number</h6>
+            <p>123-234-5654</p>
+          </div>
+
+          <div class="grid grid-cols-[112px_1fr] grid-cols-2 gap-x-5 gap-y-2">
+            <figure class="row-span-2">
+              <img class="w-28" src="images/contact-icon-2.png" alt="" />
+            </figure>
+            <h6 class="self-end text-accent">Email adresss</h6>
+            <p>photo@cool.com</p>
+          </div>
+
+          <div class="grid grid-cols-[112px_1fr] grid-cols-2 gap-x-5 gap-y-2">
+            <figure class="row-span-2">
+              <img class="w-28" src="images/contact-icon-3.png" alt="" />
+            </figure>
+            <h6 class="self-end text-accent">Website</h6>
+            <p>
+              <a
+                href="https://powiedl.github.io/50-html-css-js-projects-for-beginners-meine-Version/"
+                >Beginners portfolio</a
+              >
+            </p>
+          </div>
+
+          <div class="grid grid-cols-[112px_1fr] grid-cols-2 gap-x-5 gap-y-2">
+            <figure class="row-span-2">
+              <img class="w-28" src="images/contact-icon-4.png" alt="" />
+            </figure>
+            <h6 class="self-end text-accent">Address</h6>
+            <p>Somestreet 12, XX-1234 Country</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+body {
+  margin: 1rem;
+  width: 100dvw;
+  overflow-x: hidden;
+  background: linear-gradient(45deg, #3c4e99, #3b2fbd);
+  color: #aaa;
+  font-family: sans-serif;
+}
+
+main {
+  margin: 1rem auto;
+}
+
+a {
+  color: #bdb;
+}
+
+h1 {
+  text-align: center;
+  color: #dfd
+}
+
+h2 {
+  color: #cec;
+}
+
+h3 {
+  color: #bdb;
+}
+
+figure img {
+  transition: all 500ms;
+}
+
+figure:hover img {
+  scale: 110%;
+  transition: all 300ms;
+  margin: 0 0 0.5rem;
+}
+
+.overview {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid: 1fr / 1fr;
+}
+
+img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .overview {
+    grid: 1fr / 1fr 1fr;
+  }
+}
